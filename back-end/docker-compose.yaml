@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:13-alpine
+    restart: always
+    tty: true
+    volumes:
+      - .pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=pydb
+    ports:
+      - "5432:5432"
