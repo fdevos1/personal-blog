@@ -1,14 +1,12 @@
 import { BlogPost } from "./components/BlogPost";
-import { Header } from "./components/Header";
 import { Layout } from "./components/Layout";
 
 function App() {
   return (
     <>
-      <Header />
-
       <Layout>
-        <main>
+        <main className="flex flex-col gap-8">
+          <BlogPost />
           <BlogPost />
         </main>
       </Layout>
