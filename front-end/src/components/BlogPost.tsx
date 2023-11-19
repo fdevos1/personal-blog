@@ -1,13 +1,12 @@
 import blogPostImagePlaceholder from "@/assets/images/blogpost-image-placeholder.jpeg";
+import { PostTag } from "./PostTag";
 
 export function BlogPost() {
   return (
     <>
-      <section className="flex w-full  relative h-60 lg:h-72">
+      <section className="flex w-full  relative h-60 lg:h-72 hover:bg-black/5 hover:cursor-pointer transition-all rounded  hover:-translate-y-px">
         {/* TAG */}
-        <div className="flex justify-center font-medium absolute left-4 top-2 rounded w-20 bg-emerald-500 z-10">
-          <p className="text-white">TAG</p>
-        </div>
+        <PostTag />
 
         {/* CONTAINER */}
         <div className="flex flex-col md:flex-row md:gap-8 relative w-full">
