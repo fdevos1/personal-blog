@@ -53,8 +53,8 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGINS_WHITELIST = ("http://localhost:8080")
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGINS_WHITELIST = ("http://localhost:5173")
 
 ROOT_URLCONF = 'backend.urls'
 

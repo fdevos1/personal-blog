@@ -1,7 +1,8 @@
 import blogPostImagePlaceholder from "@/assets/images/blogpost-image-placeholder.jpeg";
 import { PostTag } from "./PostTag";
+import { IBlogPost } from "@/types/BlogPost";
 
-export function BlogPost() {
+export function BlogPost({ title, subtitle, slug }: Partial<IBlogPost>) {
   return (
     <>
       <section className="flex w-full  relative h-60 lg:h-72 hover:bg-black/5 hover:cursor-pointer transition-all rounded  hover:-translate-y-px">
@@ -19,14 +20,14 @@ export function BlogPost() {
           >
             <div className="flex flex-col gap-2 md:gap-4">
               <p className="text-white text-2xl font-semibold md:text-stone-950">
-                Hello World
+                {title}
               </p>
               <p className="text-white font-light md:text-stone-950">
-                Lorem ipsum
+                {subtitle}
               </p>
             </div>
             <a
-              href={""}
+              href={slug}
               className="hidden md:flex  w-1/2 2xl:w-2/4 justify-center bg-sky-500 text-white rounded text-base font-semibold p-1 self-center"
             >
               Continuar lendo

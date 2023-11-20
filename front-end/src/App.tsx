@@ -1,16 +1,19 @@
-import { BlogPost } from "./components/BlogPost";
+import { Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout";
+import { Homepage } from "./pages/Homepage";
 
 function App() {
   return (
-    <>
-      <Layout>
-        <main className="flex flex-col gap-8">
-          <BlogPost />
-          <BlogPost />
-        </main>
-      </Layout>
-    </>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <Homepage />
+          </Layout>
+        }
+      />
+    </Routes>
   );
 }
 
