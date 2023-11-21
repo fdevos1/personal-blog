@@ -1,4 +1,6 @@
+import { About } from "@/components/About";
 import { BlogPost } from "@/components/BlogPost";
+import { Hero } from "@/components/Hero";
 import { IBlogPost } from "@/types/BlogPost";
 
 import { useQuery, gql } from "@apollo/client";
@@ -21,7 +23,7 @@ export function Homepage() {
 
   const { loading, error, data } = useQuery(GET_BLOGPOSTS);
 
-  console.log("data:", data.allPosts);
+  console.log("data:", data);
   console.log("loading:", loading);
   console.log("error:", error);
 
@@ -30,19 +32,30 @@ export function Homepage() {
 
   return (
     <>
-      <main className="flex flex-col gap-8">
-        {data &&
-          data.allPosts.map((post: IBlogPost) => (
-            <BlogPost
-              key={post.id}
-              title={post.title}
-              subtitle={post.subtitle}
-              body={post.body}
-              slug={post.slug}
-              tags={post.tags}
-            />
-          ))}
-      </main>
+      <div className="flex flex-col w-full gap-4 h-[600px] max-w-[1200px] md:flex-row md:h-[300px] xl:w-2/3 mt-40">
+        <Hero />
+        <About />
+      </div>
+
+      <div className="w-full flex flex-col items-center xl:px-48 gap-10">
+        <p className="font-bold text-4xl text-stone-950">Últimos posts</p>
+
+        <div className="flex flex-col w-full">
+          <main className="flex flex-col gap-8">
+            {data &&
+              data.allPosts.map((post: IBlogPost) => (
+                <BlogPost
+                  key={post.id}
+                  title={post.title}
+                  subtitle={post.subtitle}
+                  body={post.body}
+                  slug={post.slug}
+                  tags={post.tags}
+                />
+              ))}
+          </main>
+        </div>
+      </div>
     </>
   );
 }

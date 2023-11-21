@@ -32,8 +32,10 @@ export function Header() {
     >
       <div className="flex w-full h-20  shadow-md px-4 bg-white">
         <div className="flex w-full justify-center gap-8">
-          {["Homepage", "Sobre", "Contatos"].map((title) => (
-            <button className="text-stone-950 font-semibold">{title}</button>
+          {["Homepage", "Sobre", "Contatos"].map((title, i) => (
+            <button key={i} className="text-stone-950 font-semibold">
+              {title}
+            </button>
           ))}
         </div>
       </div>
