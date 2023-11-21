@@ -8,7 +8,7 @@ export function BlogPost({ title, subtitle, slug }: Partial<IBlogPost>) {
 
   return (
     <>
-      <section className="flex w-full  relative h-60 lg:h-72 hover:bg-black/5 hover:cursor-pointer transition-all rounded ">
+      <section className="flex w-full  relative h-60 lg:h-72 hover:bg-black/10 hover:cursor-pointer transition-all rounded ">
         {/* TAG */}
         <PostTag />
 
@@ -41,7 +41,7 @@ export function BlogPost({ title, subtitle, slug }: Partial<IBlogPost>) {
           {/* IMAGEM */}
           <div className="w-full h-full md:w-1/2 ">
             <img
-              className="w-full h-full object-cover rounded"
+              className="w-full h-full object-cover rounded-lg"
               src={blogPostImagePlaceholder}
               alt="blog-post-image"
             />

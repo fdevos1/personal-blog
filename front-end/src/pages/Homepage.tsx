@@ -41,7 +41,7 @@ export function Homepage() {
         <p className="font-bold text-4xl text-stone-950">Últimos posts</p>
 
         <div className="flex flex-col w-full">
-          <main className="flex flex-col gap-8">
+          <main className="flex flex-col gap-8 bg-white p-8 rounded">
             {data &&
               data.allPosts.map((post: IBlogPost) => (
                 <BlogPost

@@ -21,22 +21,27 @@ export function Post() {
       slug,
     },
   });
-  const postData = data.postBySlug;
+  const postData = data && data.postBySlug;
 
   if (loading) return null;
   if (error) return `Error! ${error}`;
 
   return (
     <>
-      <div className="flex flex-col w-full h-full gap-2">
-        <h1 className="text-3xl font-bold">{postData.title}</h1>
-        <h3 className="text-lg font-light">{postData.subtitle}</h3>
+      <div className="flex w-full h-full gap-2 px-4 py-4">
+        <div className="flex flex-col w-full h-full">
+          <h1 className="text-3xl font-bold">{postData.title}</h1>
+          <h3 className="text-lg font-light">{postData.subtitle}</h3>
 
-        <hr />
+          <hr />
 
-        <section className="mt-2">
-          <p>{postData.body}</p>
-        </section>
+          <section className="mt-2">
+            <p>{postData.body}</p>
+          </section>
+        </div>
+        <div className="hidden flex flex-col w-1/2 h-full">
+          <div className="flex flex-col w-80 h-96 bg-gray-50"></div>
+        </div>
       </div>
     </>
   );
