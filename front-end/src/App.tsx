@@ -17,9 +17,9 @@ function App() {
       <Route
         path="/:slug"
         element={
-          <>
+          <Layout>
             <Post />
-          </>
+          </Layout>
         }
       />
     </Routes>

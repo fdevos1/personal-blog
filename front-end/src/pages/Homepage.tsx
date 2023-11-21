@@ -32,7 +32,7 @@ export function Homepage() {
 
   return (
     <>
-      <div className="flex flex-col w-full gap-4 h-[600px] max-w-[1200px] md:flex-row md:h-[300px] xl:w-2/3 mt-40">
+      <div className="flex flex-col w-full gap-4 h-[600px] max-w-[1200px] md:flex-row md:h-[300px] xl:w-2/3 mt-10">
         <Hero />
         <About />
       </div>
