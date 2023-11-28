@@ -1,0 +1,10 @@
+attrs==22.2.0
+cffi==1.16.0
+cryptography==41.0.5
+greenlet==3.0.1
+msgpack==1.0.5
+packaging==23.2
+ply==3.11
+pycparser==2.21
+pynvim==0.4.3
+django==4.2.7
