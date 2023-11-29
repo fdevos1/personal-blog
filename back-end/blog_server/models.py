@@ -26,7 +26,7 @@ class Post(models.Model):
     
   title = models.CharField(max_length=255, unique=True)
   subtitle = models.CharField(max_length=255, blank=True)
-  image = models.FileField(upload_to="uploads/",)
+  image = models.ImageField(upload_to="uploads/", default="")
   slug = models.SlugField(max_length=255, unique=True)
   body = models.TextField()
   meta_description = models.CharField(max_length=150, blank=True)

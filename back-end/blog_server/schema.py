@@ -2,8 +2,9 @@ import graphene
 
 from django.contrib.auth import get_user_model
 from graphene_django import DjangoObjectType
+from graphene_file_upload.scalars import Upload
 
-from blog import models
+from blog_server import models
 
 
 class UserType(DjangoObjectType):
@@ -52,5 +53,22 @@ class Query(graphene.ObjectType):
       models.Post.objects.prefetch_related("tags").select_related("author").filter(tags__name_iexact=tag)
     )
     
+  
+class CreatePost(graphene.Mutation):
+  
+    class Arguments: 
+        title = graphene.String()
+        subtitle = graphene.String()
+        image = Upload(required=True)
+        body = graphene.String()
+        author = graphene.Field(AuthorType, username=graphene.String())
+        tags = graphene.Field(TagType, tag=graphene.String())
+        
+        
+    
+    
+  
+
+  
     
 schema = graphene.Schema(query=Query)
