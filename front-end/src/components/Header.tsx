@@ -41,7 +41,7 @@ export function Header() {
       `}
     >
       <div
-        className={`flex w-full h-20  shadow-md px-4 bg-white
+        className={`flex w-full h-20 px-4 
       fixed
       top-0 z-10
       ${
@@ -58,7 +58,11 @@ export function Header() {
       >
         <div className="flex w-full justify-center items-center gap-8">
           {headerButtons.map((item, i) => (
-            <a href={item.uri} key={i} className="text-stone-950 font-semibold">
+            <a
+              href={item.uri}
+              key={i}
+              className="text-stone-950 font-semibold hover:text-sky-400 transition-colors"
+            >
               {item.name}
             </a>
           ))}

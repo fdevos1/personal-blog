@@ -32,16 +32,16 @@ export function Homepage() {
 
   return (
     <>
-      <div className="flex flex-col w-full gap-4 h-[600px] max-w-[1200px] md:flex-row md:h-[300px] xl:w-2/3 mt-10">
+      <div className="flex flex-col w-full gap-4 max-w-[1360px] lg:flex-row  ">
         <Hero />
         <About />
       </div>
 
-      <div className="w-full flex flex-col items-center xl:px-48 gap-10">
+      <div className="w-full flex flex-col items-center">
         <p className="font-bold text-4xl text-stone-950">Últimos posts</p>
 
-        <div className="flex flex-col w-full">
-          <main className="flex flex-col gap-8 bg-white p-8 rounded">
+        <div className="flex  w-full justify-center mt-10">
+          <main className="flex flex-col  gap-8 bg-white p-8 rounded max-w-[1360px]">
             {data &&
               data.allPosts.map((post: IBlogPost) => (
                 <BlogPost
@@ -53,6 +53,15 @@ export function Homepage() {
                   tags={post.tags}
                 />
               ))}
+
+            {data.allPosts.length <= 0 ? (
+              <div className="flex justify-center">
+                <p className="text-xl font-semibold text-stone-950">
+                  Ops! Parece que não foi criado nenhum post ou não foi possível
+                  contatar o servidor. Tente novamente.
+                </p>
+              </div>
+            ) : null}
           </main>
         </div>
       </div>

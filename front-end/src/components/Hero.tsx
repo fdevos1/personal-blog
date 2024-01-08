@@ -7,7 +7,7 @@ export function Hero() {
     <>
       <div className="flex flex-col w-full p-4 justify-center items-center shadow-md rounded-lg gap-4 bg-white">
         {/* PROFILE PIC */}
-        <div className="flex w-36 h-36 border-8 border-sky-500 rounded-full">
+        <div className="flex w-36 h-36 border-4 border-sky-400 rounded-full">
           <img
             className="object-cover rounded-full"
             src={profilePic}
@@ -19,7 +19,6 @@ export function Hero() {
 
         <div className="flex flex-col items-center w-full gap-2">
           <h2 className="text-3xl font-bold">Felipe Devos</h2>
-          <span className="text-sm font-medium">Full-Stack Developer</span>
 
           <ul className="flex gap-8 justify-between mt-2">
             {personalData.map(
@@ -29,7 +28,7 @@ export function Hero() {
                     <a
                       href={url}
                       target="_blank"
-                      className="text-stone-950 hover:text-sky-500"
+                      className="text-stone-950 hover:text-sky-400"
                     >
                       <Icon name={name} />
                     </a>
